@@ -43,15 +43,29 @@
        text-align: center;
        }
 
-       body {
-    width: 50%;
-    margin: auto;
-}
-
-      .newsblock{
-
+       .newsblock {
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        background: #E1FF73;
+        width: 0;
+        height: 0;
+        padding: 25px;
        }
 
+      body {
+       width: 50%;
+       margin: auto;
+      }
+ .newsblock.active {
+    z-index: 100;
+    display: block;
+    opacity: 1;
+    width: 400px;
+    height: auto;
+}
     </style>
 </head>
 
@@ -61,13 +75,20 @@
            <div class="header">
                 Новость 1
            </div>
-	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet asperiores aut nihil! Corporis debitis labore fugiat id, eligendi ratione veritatis!
-	</p>
+	   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet asperiores aut nihil! Corporis debitis labore fugiat id, eligendi ratione veritatis!
+	   </p>
        <div class="button-container">
          <button class="button"onclick="showPopup(1)">Открыть всплывающее окно</button>
        </div>
     </div>
    
+    <div class=newsblock>
+      <h1>Новость 1</h1>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam hic, ipsa, ullam, cupiditate eveniet at voluptate corrupti commodi nobis ratione voluptatem! Vel animi totam cupiditate doloribus ad ab exercitationem officia eveniet impedit? Deleniti quasi nisi consectetur perspiciatis quibusdam nostrum, enim perferendis nam, magni molestias recusandae id libero vitae, repudiandae praesentium.
+       </p>
+    </div>
+
+
     <div class="block block-2">
         <div class="header">
                 Новость 2
@@ -78,7 +99,14 @@
          <button class="button"onclick="showPopup(1)">Открыть всплывающее окно</button>
         </div>
       </div>
+
+   <div class=newsblock>
+      <h1>Новость 2</h1>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam hic, ipsa, ullam, cupiditate eveniet at voluptate corrupti commodi nobis ratione voluptatem! Vel animi totam cupiditate doloribus ad ab exercitationem officia eveniet impedit? Deleniti quasi nisi consectetur perspiciatis quibusdam nostrum, enim perferendis nam, magni molestias recusandae id libero vitae, repudiandae praesentium.
+       </p>
+    </div>
    
+
      <div class="block ">
         <div class="header">
                 Новость 3
@@ -89,5 +117,11 @@
              <button class="button"onclick="showPopup(1)">Открыть всплывающее окно</button>
         </div>
       </div>
+
+     <div class=newsblock>
+      <h1>Новость 3</h1>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam hic, ipsa, ullam, cupiditate eveniet at voluptate corrupti commodi nobis ratione voluptatem! Vel animi totam cupiditate doloribus ad ab exercitationem officia eveniet impedit? Deleniti quasi nisi consectetur perspiciatis quibusdam nostrum, enim perferendis nam, magni molestias recusandae id libero vitae, repudiandae praesentium.
+       </p>
+    </div>
 </body>
 </html>
