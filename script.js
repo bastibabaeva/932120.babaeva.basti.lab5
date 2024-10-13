@@ -14,33 +14,35 @@ function showNews(a)
 	
 	
 	setTimeout(() => {
-        	block.style.backgroundColor = "#B6F5F5";
-        	newsblock.classList.add('active');
-		setTimeout(() =>{
+
+    	block.style.backgroundColor = "#B6F5F5";
+        newsblock.classList.add('active');
+
 		setOpacityForNews(0.3);
 		newsOpen=true;
 		
 		setTimeout(()=>{
 			document.addEventListener('click', newsClose);
 		}, 100);
-	},200);
-});
- }
+	}, 200);
+
+}
 
 function newsClose(){
-	const newsblock=document.querySelectorAll('.newsblock');
+	const newsblocks=document.querySelectorAll('.newsblock');
 	setOpacityForNews(1);
 	
-	for(let i=0; i<newsblock.length; i++)
+	for(let i=0; i<newsblocks.length; i++)
 	{
-		newsblock[i].classList.remove('active');
+		newsblocks[i].classList.remove('active');
 	}
 	
 	document.removeEventListener('click', newsClose);
-	newsblock=false;
+	newsClose=false;
 }
 
-function setOpacityForNonPopups(opacity) {
+// Функция для установки opacity для всех элементов, кроме 
+function setOpacityForNews(opacity) {
     const allElements = document.querySelectorAll('body > *:not(.newsblock)');
     allElements.forEach((element) => {
         element.style.opacity = opacity;
