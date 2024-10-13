@@ -7,15 +7,16 @@ function showNews(a)
 		newsClose();
 	}
 	
-	const blockClass='.block'+a;
-	const newsblockClass='.newsblock'+a;
+	const blockClass='.block-'+a;
+	const newsblockClass='.newsblock-'+a;
 	const block=document.querySelector(blockClass);
 	const newsblock=document.querySelector(newsblockClass);
 	
+	
 	setTimeout(() => {
-        block.style.backgroundColor = "#B6F5F5";
-        newsblock.classList.add('active');
-	setTimeout(() =>{
+        	block.style.backgroundColor = "#B6F5F5";
+        	newsblock.classList.add('active');
+		setTimeout(() =>{
 		setOpacityForNews(0.3);
 		newsOpen=true;
 		
@@ -23,13 +24,14 @@ function showNews(a)
 			document.addEventListener('click', newsClose);
 		}, 100);
 	},200);
-}
+});
+ }
 
 function newsClose(){
 	const newsblock=document.querySelectorAll('.newsblock');
 	setOpacityForNews(1);
 	
-	for(let i=0; i<newsblock.lengh; i++)
+	for(let i=0; i<newsblock.length; i++)
 	{
 		newsblock[i].classList.remove('active');
 	}
@@ -37,8 +39,9 @@ function newsClose(){
 	document.removeEventListener('click', newsClose);
 	newsblock=false;
 }
+
 function setOpacityForNonPopups(opacity) {
-    const allElements = document.querySelectorAll('body > *:not(.popup)');
+    const allElements = document.querySelectorAll('body > *:not(.newsblock)');
     allElements.forEach((element) => {
         element.style.opacity = opacity;
     });
